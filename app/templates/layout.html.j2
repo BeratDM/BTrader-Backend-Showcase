@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+    -->
+    <style type="text/css">
+        .myfooter {
+            color: #336699;
+        }
+    </style>
+    <title>{% block title %}{% endblock %} - {{ title }}</title>
+    {% endblock %}
+</head>
+
+<body
+    style="font-family:-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif; background-color:whitesmoke; ">
+    <div style="background-color: aqua; text-align: center;">
+        {% with upper1s = get_flashed_messages(category_filter=["upper1"]) %}
+        {% if upper1s %}
+        <div class="alert-message block-message error">
+            <a class="close" href="#">×</a>
+            <ul>
+                {%- for msg in upper1s %}
+                <li>{{ msg }}</li>
+                {% endfor -%}
+            </ul>
+        </div>
+        {% endif %}
+        {% endwith %}
+    </div>
+
+
+    <div id="header" class="myheader" style="display: flex; justify-content: center; ">
+        <a style="text-decoration:none; color: #336699;" href="/">
+            <h1>{{ title }}</h1>
+        </a>
+    </div>
+    {% if registered_username %}
+    <div style="display: flex; justify-content: center;">
+        Logged in as: {{ registered_username }}
+        <a style="margin-left:12px; text-decoration:none; color: #336699;" href="{{ url_for('signout') }}">Sign out</a>
+    </div>
+    {% endif %}
+    <div style="height: 30px;">
+    </div>
+
+    <div id=" content">{% block content %}{% endblock %}
+    </div>
+
+    <div id="footer" class="myfooter" style="text-align: center;">
+        <br>
+        {% block footer %}
+        <p></p>
+
+        <span onclick="window.open('https://github.com/BeratDM/BinanceTrader-Extended')">GitHub</span>
+        {% endblock %}
+    </div>
+</body>
+
+</html>

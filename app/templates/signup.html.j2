@@ -1,0 +1,28 @@
+{% extends "layout.html.j2" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div style="display: flex; justify-content: center; ">
+    <div style="display: table; width:fit-content; text-align: center;  justify-content: center; ">
+        <form method="POST">
+            <label>
+                Username
+                <input type="username" name="username" />
+            </label>
+            <label>
+                E-mail
+                <input type="email" name="email" />
+            </label>
+            <label>
+                Password
+                <input type="password" name="password" />
+            </label>
+            <input type="submit" value="Sign up" />
+        </form>
+        <div style="display: block;  justify-content: center; ">
+            <p><a href="{{ url_for('login') }}">Log in</a> instead</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

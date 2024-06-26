@@ -1,0 +1,9 @@
+venv
+.venv
+klineHistory*
+LTCBUSD*
+.env
+.vscode
+.idea
+generate_uml.py
+*.pyc

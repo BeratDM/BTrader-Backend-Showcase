@@ -1,0 +1,12 @@
+python-binance
+#TA-Lib #if fails. you need to download the correct build from https://github.com/cgohlke/talib-build/releases. paste it to the project folder and run pip install 
+TA_Lib-0.4.26-cp39-cp39-win_amd64.whl #python3.9.* x64
+numpy
+websocket_client
+backtrader
+Matplotlib #backtrader plotting support
+flask
+python-dotenv
+websockets
+passlib
+waitress
