@@ -2,7 +2,7 @@
 
 ## This repository showcases some of the classes and systems of my project BTrader
 
-BTrader is a program to create-deploy-moderate an unlimited number of trade bots to trade on the cryptocurrency market with the ability to trade using modular endlessly powerful trading strategies. Deployed on a server running 24/7, It has made more than 250 successful trades so far for my personal use and is cleansed of any bugs as far as I've explored.
+BTrader is a program to create, deploy, and moderate an unlimited number of trade bots to trade on the cryptocurrency market on any coin and any time interval using limitlessly expandable trading strategies. Deployed on a server running 24/7, It has made more than 250 successful trades so far for my personal use and is cleansed of any bugs as far as I've explored.
 
 As for now, I am not comfortable with sharing my full work on the internet as open source. I believe this much of the codebase should be enough to satisfy some of the curiosity of people who want to build a similar project while also showcasing my skills.
 While systems in this repository are fully functional, they are only a part of the bigger system and therefore incomplete without it.
@@ -10,7 +10,7 @@ While systems in this repository are fully functional, they are only a part of t
 The repository contains the following:
 
 - Flask app connecting backend and frontend in `app.py`.
-- The bTrader class to handle real-time trading on the market in `btrader.py`. Asynchronicity and multithreaded architecture.  
+- The bTrader class to handle real-time trading on the market in `btrader.py`. double-layered Asynchronicity and multithreaded architecture.  
 - The strategy interface and two strategy implementations with both real-time and backtesting classes.
 - Structures of environment variables.
 - Frontend examples.
@@ -23,6 +23,7 @@ Some of the missing parts in this repository:
 - Frontend.
 - Log handling.
 - Market history.
+- Serving of the flask app.
 - And more.
 
 ## You can find the original `Readme.md` below
