@@ -70,7 +70,7 @@ fetch(`${url_history}?TRADE_SYMBOL=${TRADE_SYMBOL}&TRADE_INTERVAL=${TRADE_INTERV
 
 
 /* Get and update chart with real-time values from this websocket */
-if (BINANCE_USE_TEST_API == true) {
+if (BINANCE_USE_TEST_API == false) {
     var wss_url = "wss://stream.binance.com:9443/ws"
 } else {
     var wss_url = "wss://testnet.binance.vision/ws"
