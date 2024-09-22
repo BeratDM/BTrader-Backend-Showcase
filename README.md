@@ -13,7 +13,6 @@ The repository contains the following:
 - The bTrader class to handle real-time trading on the market in `btrader.py`. double-layered Asynchronicity and multithreaded architecture.  
 - The strategy interface and two strategy implementations with both real-time and backtesting classes.
 - Structures of environment variables.
-- Frontend examples.
 
 Some of the missing parts in this repository:
 
@@ -39,7 +38,7 @@ Some of the missing parts in this repository:
 
 ## Overview
 
-This project uses Binance API to trade crypto in real-time using technical analysis. And gives the option to backtest the strategies using [backtrader](https://github.com/mementum/backtrader). Any amount of traders can be deployed with any pair/interval/strategy. It also supports the development of new trading strategies.
+This project uses Binance API to trade crypto in real-time using technical analysis. It gives the option to backtest the strategies using [backtrader](https://github.com/mementum/backtrader). Any amount of traders can be deployed with any pair/interval/strategy. It also supports the development of new trading strategies (with or without technical analysis).
 The Program is running a Flask application with user-friendly UI and has a quick trading option with [lightweight-charts](https://www.tradingview.com/lightweight-charts/) implemented
 
 ## Features
