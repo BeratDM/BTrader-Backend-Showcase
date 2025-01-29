@@ -1,29 +1,36 @@
-# BTrader Backend Showcase
+# BTrader Backend Showcase as of February 2024 State
 
 ## This repository showcases some of the classes and systems of my project BTrader
 
-BTrader is a program to create, deploy, and moderate an unlimited number of trade bots to trade on the cryptocurrency market on any coin and any time interval using limitlessly expandable trading strategies. Deployed on a server running 24/7, It has made more than 250 successful trades so far for my personal use and is cleansed of any bugs as far as I've explored.
+BTrader is a program to create, deploy, and moderate an unlimited number of trade bots to trade on the cryptocurrency market on any coin and any time interval using limitlessly expandable trading strategies. Deployed on a aws server running 24/7, It has made more than 250 successful trades in 2024 for my personal use and is cleansed of any bugs as far as I've explored.
 
-As for now, I am not comfortable with sharing my full work on the internet as open source. I believe this much of the codebase should be enough to satisfy some of the curiosity of people who want to build a similar project while also showcasing my skills.
-While systems in this repository are fully functional, they are only a part of the bigger system and therefore incomplete without it.
+As for now, I am not comfortable with sharing the full project as open source. I believe this much of the codebase should be enough to satisfy some of the curiosity of people who want to build a similar project and guide them while also showcasing my skills.
+While systems in this repository are fully functional, they are meant to be used with other systems therefore might be incomplete without.
 
 The repository contains the following:
 
-- Flask app connecting backend and frontend in `app.py`.
-- The bTrader class to handle real-time trading on the market in `btrader.py`. double-layered Asynchronicity and multithreaded architecture.  
-- The strategy interface and two strategy implementations with both real-time and backtesting classes.
+- Flask app connecting the backend to frontend in `app.py`.
+- The bTrader class to handle realtime trading on the market in `btrader.py`. Asynchronicity and multithreaded architechture.  
+- The strategy interface and two strategy implementations with both realtime and backtesting classes.
+- bTraderManager class to handle multiple traders in `btmanager.py`
 - Structures of environment variables.
 
 Some of the missing parts in this repository:
 
-- Client connections handling to authorize and trade using a cryptocurrency exchange.
-- Bigger structure to moderate multiple traders from the user interface and backend.
-- Backtesting.
+- Client connections for authorization handling and order processing through cryptocurrency exchange.
+- Trade pair price step adjustments(10<sup>-18</sup> precision), auto order safety for up to %10 account balance deficit.
+- Backtesting with historical data using any date-span, trade pair, interval, strategy.
 - Frontend.
 - Log handling.
 - Market history.
-- Serving of the flask app.
-- And more.
+- etc.
+
+<br />
+<br />
+<br />
+
+## Relations
+![uml](https://cdn.discordapp.com/attachments/715073056607043605/1333924491289563166/btrader1101.svg?ex=679aa97d&is=679957fd&hm=6f62b08cfa60b19dc22361c07c2a60b2e9be3c03b22efd76078b39c0e4efe18d&)
 
 ## You can find the original `Readme.md` below
 
@@ -34,11 +41,13 @@ Some of the missing parts in this repository:
 <br />
 <br />
 
+---
+
 # BTrader-Extended
 
 ## Overview
 
-This project uses Binance API to trade crypto in real-time using technical analysis. It gives the option to backtest the strategies using [backtrader](https://github.com/mementum/backtrader). Any amount of traders can be deployed with any pair/interval/strategy. It also supports the development of new trading strategies (with or without technical analysis).
+This project uses Binance API to trade crypto in real-time using technical analysis. And gives the option to backtest the strategies using [backtrader](https://github.com/mementum/backtrader). Any amount of traders can be deployed with any pair/interval/strategy. It also supports the development of new trading strategies.
 The Program is running a Flask application with user-friendly UI and has a quick trading option with [lightweight-charts](https://www.tradingview.com/lightweight-charts/) implemented
 
 ## Features
