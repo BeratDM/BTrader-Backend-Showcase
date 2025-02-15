@@ -2,22 +2,22 @@
 
 ## This repository showcases some of the classes and systems of my project BTrader
 
-BTrader is a program to create, deploy, and moderate an unlimited number of trade bots to trade on the cryptocurrency market on any coin and any time interval using limitlessly expandable trading strategies. Deployed on a aws server running 24/7, It has made more than 250 successful trades in 2024 for my personal use and is cleansed of any bugs as far as I've explored.
+BTrader is a program that creates, deploys, and moderates an unlimited number of trade bots to trade in the cryptocurrency market on any coin and at any time interval using limitlessly expandable trading strategies. Deployed on an AWS server running 24/7, It has made more than 250 successful trades in 2024 for my personal use and is cleansed of any bugs as far as I've explored.
 
-As for now, I am not comfortable with sharing the full project as open source. I believe this much of the codebase should be enough to satisfy some of the curiosity of people who want to build a similar project and guide them while also showcasing my skills.
+As for now, I will not be sharing the full project as open source. I believe this much of the codebase should be enough to satisfy some of the curiosity of people who want to build a similar project and guide them while also showcasing my skills.
 While systems in this repository are fully functional, they are meant to be used with other systems therefore might be incomplete without.
 
 The repository contains the following:
 
 - Flask app connecting the backend to frontend in `app.py`.
-- The bTrader class to handle realtime trading on the market in `btrader.py`. Asynchronicity and multithreaded architechture.  
-- The strategy interface and two strategy implementations with both realtime and backtesting classes.
+- The bTrader class to handle real-time trading on the market in `btrader.py`. Asynchronicity and multithreaded architecture.  
+- The strategy interface and two strategy implementations with both real-time and backtesting classes.
 - bTraderManager class to handle multiple traders in `btmanager.py`
 - Structures of environment variables.
 
 Some of the missing parts in this repository:
 
-- Client connections for authorization handling and order processing through cryptocurrency exchange.
+- Client connections for authorization handling and order processing through the cryptocurrency exchange.
 - Trade pair price step adjustments(10<sup>-18</sup> precision), auto order safety for up to %10 account balance deficit.
 - Backtesting with historical data using any date-span, trade pair, interval, strategy.
 - Frontend.
