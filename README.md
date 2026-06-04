@@ -1,54 +1,49 @@
-# BTrader Backend Showcase as of February 2024 State
+# BTrader Backend Showcase (February 2024 State)
+## Overview
 
-## This repository showcases some of the classes and systems of my project BTrader
+This repository showcases selected components and systems from my BTrader project.
 
-BTrader is a program that creates, deploys, and moderates an unlimited number of trade bots to trade in the cryptocurrency market on any coin and at any time interval using limitlessly expandable trading strategies. Deployed on an AWS server running 24/7, it has made more than 250 successful trades in 2024 for my personal use and is cleansed of any bugs as far as I've explored.
+BTrader is an algorithmic trading platform designed to create, deploy, and manage multiple automated trading bots for cryptocurrency markets. It supports trading across all assets and timeframes available through the Binance API. The system is built with a modular strategy architecture, enabling extensible trading logic and independent evaluation of strategies.
 
-As for now, I will not be sharing the full project as open source. I believe this much of the codebase should be enough to satisfy some of the curiosity of people who want to build a similar project and guide them, while providing a look into one of my works.
-While systems in this repository are fully functional, they are meant to be used with other systems; therefore, small parts can be non-functional without them.
+The system integrates both live trading and historical backtesting capabilities using Backtrader. It provides a web-based interface with user authentication and includes real-time charting and manual trading functionality powered by Lightweight Charts. [Backtrader](https://github.com/mementum/backtrader) [Lightweight Charts](https://www.tradingview.com/lightweight-charts/)
 
-The repository contains the following:
+It has executed 250+ trades during 2024 when deployed on an AWS server for personal use, supporting both high-frequency and longer-term trading strategies.
 
-- Flask app connecting the backend to frontend in `app.py`.
-- The bTrader class to handle real-time trading on the market in `btrader.py`. Asynchronicity and multithreaded architecture for every trader and every market calculation, allowing traders to concurrently work and keep updated about the market while running multiple evaluations at the same time without missing a beat.
-- The strategy interface and two strategy implementations with both real-time and backtesting classes.
-- bTraderManager class to handle multiple traders in `btmanager.py`
-- Structures of environment variables. (later adopted [doppler](https://www.doppler.com/) for increased security)
+This repository is intended to provide insight into the architecture and core components for educational and demonstration purposes. Some internal components are intentionally excluded as part of a larger private infrastructure.
 
-Some of the excluded parts in this repository:
+## Included Components
 
-- Client connections for authorization handling and order processing through the cryptocurrency exchange.
-- Trade pair price step adjustments(10<sup>-18</sup> precision), auto order safety for up to a desired(e.g. %10) target balance deficit.
-- Backtesting with historical data using any date-span, trade pair, interval, strategy.
-- Frontend.
-- Log handling.
-- Market history.
-- etc.
+- A Flask application (`app.py`) that connects the backend and frontend. Browser cookies containing sensitive data are securely hashed.
+- The bTrader class (`btrader.py`) handles real-time market trading. It uses a multithreaded architecture to allow each trader and market calculation to run concurrently, enabling continuous processing of market updates without missing events. This design is useful for computationally expensive evaluations.
+- The bStrategy base class for live trading (`bstrategy.py`)
+- Two strategy implementations for both live trading and backtesting.
+- The bTraderManager class (`btmanager.py`), responsible for managing multiple trader instances.
+- Environment variable configurations, later migrated to Doppler for improved security and secret management. [Doppler](https://www.doppler.com/)
+- Application serving via `main.py` using Waitress as the production WSGI server. [Waitress](https://github.com/Pylons/waitress)
 
-<br />
-<br />
-<br />
+## Excluded Components
 
-## Relations
-![uml](https://cdn.discordapp.com/attachments/715073056607043605/1333924491289563166/btrader1101.svg?ex=679aa97d&is=679957fd&hm=6f62b08cfa60b19dc22361c07c2a60b2e9be3c03b22efd76078b39c0e4efe18d&)
+- Client connections for authentication and order processing through the cryptocurrency exchange.
+- Trade pair price step adjustments (10<sup>-18</sup> precision) and automatic safety handling for fee-induced position size deviations.
+- Backtesting using historical data across any date ranges, trade pairs, intervals, and strategies.
+- Frontend implementation.
+- Logging system.
+- Market history module.
+- Other internal systems and newer versions of the architecture with additional upgrades.
 
-## You can find the original `Readme.md` below
-
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+## System Architecture Overview
+![uml](https://pub-55a8605bd8ee494ab002c0bb70e15fed.r2.dev/github/btrader1101.svg)
+## Useful Links
+- [binance api docs 1](https://github.com/binance/binance-spot-api-docs)
+- [binance api docs 2 (they are different)](https://developers.binance.com/docs/binance-spot-api-docs/README)
 
 ---
-
-# BTrader-Extended
+## Original Project Reference (Legacy)
 
 ## Overview
 
-This project uses Binance API to trade crypto in real-time using technical analysis. And gives the option to backtest the strategies using [backtrader](https://github.com/mementum/backtrader). Any amount of traders can be deployed with any pair/interval/strategy. It also supports the development of new trading strategies.
-The Program is running a Flask application with user-friendly UI and has a quick trading option with [lightweight-charts](https://www.tradingview.com/lightweight-charts/) implemented
+This project uses the Binance API to trade crypto in real-time using market calculations. It also provides the ability to backtest strategies using [Backtrader](https://github.com/mementum/backtrader). Any number of traders can be deployed with various pairs/intervals/strategies. It also supports the development of new trading strategies.
+The Program is running a Flask application with a user-friendly UI and has a quick trading option with [lightweight-charts](https://www.tradingview.com/lightweight-charts/) implemented
 
 ## Features
 
@@ -65,8 +60,8 @@ The Program is running a Flask application with user-friendly UI and has a quick
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/BeratDM/BinanceTrader-Extended.git
-   cd BinanceTrader-Extended
+   git clone https://github.com/BeratDM/BTrader-Extended.git
+   cd BTrader-Extended
    ```
 
 2. Set up a virtual environment (optional but recommended):
